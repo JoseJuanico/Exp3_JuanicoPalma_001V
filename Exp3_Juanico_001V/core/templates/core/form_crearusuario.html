@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro</title>
+        <link href="{% static 'core/css/bootstrap.min.css'%}" type="text/css" rel="Stylesheet">
+        <link href="{% static 'core/css/Styles.css'%}" type="text/css" rel="Stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+        <style>
+            label {
+                padding: 5px;
+            }
+
+            #tituloInicioSesion {
+                text-align: center;
+                padding-bottom: 10px;
+                color: rgb(15, 96, 107);
+                text-shadow: 1px 1px 1px rgb(6, 44, 114);
+            }
+
+            #tituloInicioSesion:hover {
+                color: brown;
+            }
+
+            #tituloRegistrar {
+                text-align: center;
+                padding-bottom: 10px;
+                color: rgb(15, 96, 107);
+                text-shadow: 1px 1px 1px rgb(6, 44, 114);
+            }
+            #tituloRegistrar:hover {
+                color: brown;
+            }
+            label {
+                clear: both;
+                float: left;
+                width: 180px;
+            }
+            .error-control {
+                border: 1px solid red;
+            }
+            label.error {
+                color: rgb(131, 1, 1);
+                width: 200px;
+                font-size: 0.8em;
+                margin-top: -5px;
+                margin-bottom: 3px;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                $.extend(jQuery.validator.messages, {
+                    required: "This field is required.",
+                    email: "Ingresa un correo con formato user@data .",
+                    minlength: $.validator.format("Ingresa 6 caracteres como mínimo."),
+                });
+            });
+            $(function() {
+            $("#formRegistro").validate( {
+                rules: {
+                    lnombre: "required",
+                    lapellido: "required",
+                    lcorreo: "required",
+                    lpassword1: "required",
+                    lpassword2: {
+                        required: true,
+                        equalTo: "#lpassword1"
+                    },
+                    lanioNacimiento: "required",
+                    genero: "required",
+                },
+                messages: {
+                    lnombre: "Ingrese tu nombre.",
+                    lapellido: "Ingrese tu apellido.",
+                    lcorreo: {
+                        required: "Ingrese tu correo electrónico.",
+                    },
+                    lpassword1: {
+                        required: "Ingrese una contraseña.",
+                    },
+                    lpassword2: {
+                        required: "Ingrese una contraseña.",
+                        equalTo: "Las contraseñas deben coincidir.",
+                    },
+                    lanioNacimiento: "Ingrese año de nacimiento.",
+                    genero: "Debe seleccionar un género.",
+                }
+            });
+        });
+        $(function(){
+            $("#formSesion").validate( {
+                rules: {
+                lcorreo: "required",
+                lpassword: "required"
+                },
+                messages: {
+                    lcorreo: {
+                        required: "Ingrese tu correo electrónico.",
+                        lcorreo: "Ingrese formato correcto.",
+                    },
+                    lpassword: {
+                        required: "Ingrese una contraseña.",
+                    }
+                }   
+            });
+        });
+        </script>
+    </head>
+    <body>
+        {% load static %}
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <a href="{% url 'index'%}"><img src="{% static 'core/img/logo.jpg'%}" width="80px" height="80px" alt=""></a>
+            </a>
+            
+            <div class="collapse navbar-collapse" id="opciones">   
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index'%}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'quienSomos'%}">Quiénes somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'plan'%}">Suscripción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'clases'%}">Entrenamientos</a>
+                    </li>            
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registro'%}">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'horarioAtencion'%}">Horarios de apertura</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;" />
+        <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;" />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm" >
+                    <div id = "tituloInicioSesion">
+                        <h1>Iniciar sesión</h1>
+                    </div>
+                    <form role="form" id = "formSesion" action="#" method="POST" style="background-color: rgb(109, 105, 105); border-radius: 5px; border: solid 1px #eee">
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lcorre">Correo electrónico</label>
+                            <input type="email" class="form-control" id="lcorreo" name="lcorreo" placeholder="Ingrese correo electrónico..." required />
+                        </div>
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lpassword">Contraseña </label>
+                            <input type="password" class="form-control" id="lpassword" name="lpassword" placeholder="Ingrese contraseña..." required maxlength="9" />
+                        </div>
+                        <div class="btnFormulario1" style = "margin-left: 300px;" >
+                            <input type="submit" id="btnEnviar" name="btnEnviar" onclick="" value="Iniciar Sesión" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm">
+                    <div id = "tituloRegistrar">
+                        <h1>Registrarse</h1>
+                    </div>
+                    <form id = "formRegistro" role="form" action="confirmacion.html" method="POST" style="background-color: rgb(109, 105, 105); border-radius: 5px; border: solid 1px #eee">
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lnombre">Nombres </label>
+                            <input type="text" class="form-control" id="lnombre" name="lnombre" placeholder="Ingrese nombres..." required autofocus />
+                        </div>
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lapellido">Apellidos </label>
+                            <input type="text" class="form-control" id="lapellido" name="lapellido" placeholder="Ingrese apellidos..." required />
+                        </div>
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lcorre">Correo </label>
+                            <input type="email" class="form-control" id="lcorreo" name="lcorreo" placeholder="Ingrese correo electrónico..." required />
+                        </div>
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lpassword1">Contraseña </label>
+                            <input type="password" class="form-control" id="lpassword1" name="lpassword1" placeholder="Ingrese contraseña..." required minlength="6" maxlength="9" />
+                        </div>
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lpassword2">Reingresa contraseña</label>
+                            <input type="password" class="form-control" id="lpassword2" name="lpassword2" placeholder="Ingrese contraseña..." required minlength="6" maxlength="9" />
+                        </div>
+                        <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
+                            <label for="lanioNacimiento">Fecha de nacimiento </label>
+                            <input type="date" class="form-control" id="lanioNacimiento" name="lanioNacimiento" required min="1900-12-12" max="2100-12-12" />
+                        </div>
+                        <label for="genero" style="margin-left: 100px; margin-right: 100px;">Género: </label><br />
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="femenino" name="genero" value="Femenino"/>
+                            <label for="genero" class="form-check-label">Femenino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="masculino" name="genero" value="Masculino"/>
+                            <label for="genero" class="form-check-label">Masculino</label>
+                        </div>
+                        <div class="btnFormulario1" >
+                            <input type="submit" id="btnEnviar" name="btnEnviar" onclick="" value="Registrar" />
+                            <input type="reset" id="btnResetear" name="btnResetear" onclick="alert('Se han borrado los parámetros')" value="Limpiar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr style="height:100px; border-width:1; color:gray; background-color: black; margin: auto;">
+        <footer class="piePagina bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm" style="margin-top: 30px;padding: 0px;">
+                        <p class="pieTexto">ANONYMOUS GYM</p>
+                    </div>
+                    <div class="col-sm" style="margin-top: 30px;padding-left: 70px;">
+                        <a href="https://www.facebook.com/" ><img src="{% static 'core/img/Facebook_Rounded_Solid_icon-icons.com_61562.png'%}"></a>
+                        <a href="https://www.instagram.com/"><img src="{% static 'core/img/Instagram_Rounded_Solid_icon-icons.com_61560.png'%}"></a>
+                        <a href="https://www.twitter.com/"><img src="{% static 'core/img/Twitter_Rounded_Solid_icon-icons.com_61561.png'%}"></a>
+                    </div>
+                    <div class="col-sm">
+                        <p class="copyright" style="margin-top: 70px;">Jose Juanico,@Copyrigth Derechos reservados</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+         <!--Js, SQuery, Bootstrap, etc-->
+         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    </body>
+</html>
