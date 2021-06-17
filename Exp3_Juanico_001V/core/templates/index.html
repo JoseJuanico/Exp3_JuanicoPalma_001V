@@ -37,10 +37,13 @@
                         <a class="nav-link" href="{% url 'clases'%}">Entrenamientos</a>
                     </li>            
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registro'%}">Registro</a>
+                        <a class="nav-link" href="{% url 'crearUsuario'%}">Registro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'horarioAtencion'%}">Horarios de apertura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'basededatos'%}">Mostrar usuarios actuales</a>
                     </li>
                 </ul>
             </div>
@@ -84,27 +87,7 @@
         </div> 
 
         <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
-        <div class = "container">
-            <h1>Mostrando usuarios</h1>
-        </div>
-        <div class = "container">
-            <table border = "1">
-                <tr>
-                    <td>Rut</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>Correo</td>
-                </tr>
-                {% for us in datos %}
-                    <tr>
-                        <td>{{us.rut}}</td>
-                        <td>{{us.nombre}}</td>
-                        <td>{{us.apellido}}</td>
-                        <td>{{us.correo}}</td>
-                    </tr>
-                {%endfor%}
-            </table>
-        </div>
+        
         <!--Clases: imagenes con links a clases.html-->
         <h1 class="titulos"><u>Clases profesionales</u></h1>
         <div class="container">
