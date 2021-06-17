@@ -13,7 +13,7 @@ class UsuarioForm(ModelForm):
 			'nombre': 'Ingrese el nombre',
 			'apellido': 'Ingrese el apellido',
 			'correo': 'Ingrese el correo electrónico',
-			'contrasena': 'Ingrese la contrasena',
+			'contrasena': 'Ingrese la contraseña',
 			'tipo': 'Ingrese el tipo de usuario',
 		}
 
@@ -21,7 +21,7 @@ class UsuarioForm(ModelForm):
 			'rut': forms.TextInput(
 				attrs = {
 					'class': 'form-control',
-					'placeholder': 'Ingrese rut sin puntos...',
+					'placeholder': 'Rut sin puntos...',
 					'id': 'lrut',
 					'name': 'lrut',
 				}
@@ -29,7 +29,7 @@ class UsuarioForm(ModelForm):
 			'nombre': forms.TextInput(
 				attrs = {
 					'class': 'form-control',
-					'placeholder': 'Ingrese nombres...',
+					'placeholder': 'Nombres...',
 					'id': 'lnombre',
 					'name': 'lnombre',
 				}
@@ -37,7 +37,7 @@ class UsuarioForm(ModelForm):
 			'apellido': forms.TextInput(
 				attrs = {
 					'class': 'form-control',
-					'placeholder': 'Ingrese apellidos...',
+					'placeholder': 'Apellidos...',
 					'id': 'lapellido',
 					'name': 'lapellido',
 				}
@@ -45,15 +45,15 @@ class UsuarioForm(ModelForm):
 			'correo': forms.EmailInput(
 				attrs = {
 					'class': 'form-control',
-					'placeholder': 'Ingrese correo electrónico...',
+					'placeholder': 'Correo electrónico...',
 					'id': 'lcorreo',
 					'name': 'lcorreo',
 				}
 			),
-			'contrasena': forms.TextInput(
+			'contrasena': forms.PasswordInput(
 				attrs = {
 					'class': 'form-control',
-					'placeholder': 'Ingrese contraseña...',
+					'placeholder': 'Máx. 9 caracteres...',
 					'id': 'lpassword1',
 					'name': 'lpassword1',
 				}

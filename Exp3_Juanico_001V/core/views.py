@@ -43,3 +43,17 @@ def crearUsuario(request):
         usuario = UsuarioForm() #en este caso se asigna un objeto vacio
     return render(request, 'core/form_crearusuario.html', {'usuario': usuario}) #y se debe enviar al formulario en este caso
     #de esta forma se controla el ingreso
+
+
+def form_mod_usuario(request, id): #se recibe el id aparte
+    usuario = Usuario.objects.get(rut = id) #el rut qeu se recibe por parametro, lo recibe para ir a buscar el objeto al admin de djando
+
+    datos = {
+        'form': UsuarioForm(instance = usuario) #form toma el valor del form de UsuarioForm, la planilla creada
+    }
+    if request.method == 'POST': 
+        formulario = UsuarioForm(data = request.POST, instance = usuario) #se crea nuevo objeto
+        if formulario.is_valid:
+            formulario.save() #permite guardar el objeto ya modificado
+            return redirect('basededatos')
+    return render (request, 'core/form_mod_usuario.html', datos)
