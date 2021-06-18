@@ -57,3 +57,9 @@ def form_mod_usuario(request, id): #se recibe el id aparte
             formulario.save() #permite guardar el objeto ya modificado
             return redirect('basededatos')
     return render (request, 'core/form_mod_usuario.html', datos)
+    
+def form_del_usuario(request, id):
+    usuario = Usuario.objects.get(rut = id)
+    usuario.delete()
+    return redirect('basededatos')
+  

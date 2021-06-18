@@ -72,9 +72,11 @@
                         <td>{{us.apellido}}</td>
                         <td>{{us.correo}}</td>
                         <td><a href = "{% url 'form_mod_usuario' us.rut%}" class = "btn btn-primary">Modificar</a></td>
+                        <td><a href = "{% url 'form_del_usuario' us.rut%}" class = "btn btn-danger">Eliminar</a></td>
                     </tr>
                 {%endfor%}
             </table>
+            <a href = "{% url 'crearUsuario'%}" class = "btn btn-danger">Nuevo Usuario</a>
         </div>
         <!--Clases: imagenes con links a clases.html-->
         
