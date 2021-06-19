@@ -24,10 +24,6 @@ def plan (request):
 def quienSomos (request):
     return render (request, 'quienSomos.html')
 
-def registro (request):
-    return render (request, 'registro.html')
-
-
 def basededatos(request):
     usuario = Usuario.objects.all() #acceso a los usuarios ya creados por admin
     return render (request, 'core/basededatos.html', context = {'datos': usuario})
