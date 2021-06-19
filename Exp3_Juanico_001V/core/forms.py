@@ -9,12 +9,14 @@ class UsuarioForm(ModelForm):
 		fields = ['rut', 'nombre', 'apellido', 'correo', 'contrasena', 'tipo']
 
 		labels = { #se le da palabras a los labels segun el atributo del models
-			'rut': 'Ingrese el rut',  #rut se refiere al atributo y lo siguiente es lo que dira el label en la pagina
+			'rut': 'Ingrese el rut (10637553-2)',  #rut se refiere al atributo y lo siguiente es lo que dira el label en la pagina
 			'nombre': 'Ingrese el nombre',
 			'apellido': 'Ingrese el apellido',
 			'correo': 'Ingrese el correo electrónico',
 			'contrasena': 'Ingrese la contraseña',
 			'tipo': 'Ingrese el tipo de usuario',
+			'editar': 'Editar',
+			'eliminar': 'Borrar de base de datos',
 		}
 
 		widgets = { #permite definir que tipo de elementos se insertan en el html para ingresar informacion

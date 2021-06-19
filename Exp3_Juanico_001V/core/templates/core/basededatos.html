@@ -53,24 +53,28 @@
 
         <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
         <div class = "container">
-            <h1 style = "text-align: center;">Mostrando usuarios</h1>
+            <h1 class = "titulos" style = "text-align: center;">Mostrando usuarios</h1>
         </div>
 
         <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
         <div class = "container">
             <table class = "table">
-                <tr>
+                <tr style = "background-color: beige;">
                     <th scope = "col">Rut</th>
                     <th scope = "col">Nombre</th>
                     <th scope = "col">Apellido</th>
                     <th scope = "col">Correo</th>
+                    <th scope = "col">Tipo</th>
+                    <th scope = "col">Editar</th>
+                    <th scope = "col">Borrar de base de datos</th>
                 </tr>
                 {% for us in datos %}
-                    <tr>
+                    <tr style = "background-color: #eee;">
                         <td>{{us.rut}}</td>
                         <td>{{us.nombre}}</td>
                         <td>{{us.apellido}}</td>
                         <td>{{us.correo}}</td>
+                        <td>{{us.tipo}}</td>
                         <td><a href = "{% url 'form_mod_usuario' us.rut%}" class = "btn btn-primary">Modificar</a></td>
                         <td><a href = "{% url 'form_del_usuario' us.rut%}" class = "btn btn-danger">Eliminar</a></td>
                     </tr>
