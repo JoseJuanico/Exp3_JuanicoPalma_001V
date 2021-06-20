@@ -5,11 +5,11 @@ from .models import Usuario
 
 class UsuarioForm(ModelForm): 
 	class Meta:
-		model = Usuario #clase con la que se vincula el formulario
+		model = Usuario 
 		fields = ['rut', 'nombre', 'apellido', 'correo', 'contrasena', 'tipo']
 
-		labels = { #se le da palabras a los labels segun el atributo del models
-			'rut': 'Ingrese el rut (10637553-2)',  #rut se refiere al atributo y lo siguiente es lo que dira el label en la pagina
+		labels = { 
+			'rut': 'Ingrese el rut (EJ.10637553-2)',  
 			'nombre': 'Ingrese el nombre',
 			'apellido': 'Ingrese el apellido',
 			'correo': 'Ingrese el correo electrónico',
@@ -19,7 +19,7 @@ class UsuarioForm(ModelForm):
 			'eliminar': 'Borrar de base de datos',
 		}
 
-		widgets = { #permite definir que tipo de elementos se insertan en el html para ingresar informacion
+		widgets = {
 			'rut': forms.TextInput(
 				attrs = {
 					'class': 'form-control',

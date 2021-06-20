@@ -168,10 +168,10 @@
                         <h1>Registrarse</h1>
                     </div>
                     <form id = "formulario" action = "#" role="form"  method="POST" style="background-color: rgb(109, 105, 105); border-radius: 5px; border: solid 1px #eee">
-                        {%csrf_token%} <!--comando que sirve en django para controlar integridad de datos ingresados, versus los que estan en la base de datos ya hecho, para que se almacene correctamente-->
+                        {%csrf_token%}
                         <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
-                            {{usuario.rut.label}} <!--se accede al label que se especifico en el .forms-->
-                            {{usuario.rut}} <!--llama al widget que se codifico-->
+                            {{usuario.rut.label}} 
+                            {{usuario.rut}} 
                         </div>
                         <br/>
                         <div class="form-group" style="margin-left: 100px; margin-right: 100px;">
