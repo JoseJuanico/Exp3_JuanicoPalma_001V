@@ -19,7 +19,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <a href="{% url 'index'%}"><img src="{% static 'core/img/logo.jpg'%}" width="80px" height="80px" alt=""></a>
+                <a href="{% url 'index'%}"><img src="{% static 'core/img/logoground.jpg'%}" width="80px" height="80px" alt=""></a>
             </a>
             
             <div class="collapse navbar-collapse" id="opciones">   
@@ -28,22 +28,10 @@
                         <a class="nav-link" href="{% url 'index'%}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'quienSomos'%}">Quiénes somos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'plan'%}">Suscripción</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'clases'%}">Entrenamientos</a>
-                    </li>            
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'crearUsuario'%}">Registro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'horarioAtencion'%}">Horarios de apertura</a>
+                        <a class="nav-link" href="{% url 'crearUsuario'%}">Registrar proovedor</a>
                     </li>
 		    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'basededatos'%}">Mostrar usuarios actuales</a>
+                        <a class="nav-link" href="{% url 'basededatos'%}">Mostrar proovedores actuales</a>
                     </li>
                 </ul>
 
@@ -53,7 +41,7 @@
 
         <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
         <div class = "container">
-            <h1 class = "titulos" style = "text-align: center;">Mostrando usuarios</h1>
+            <h1 class = "titulos" style = "text-align: center;">Mostrando Proovedores</h1>
         </div>
 
         <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
@@ -62,8 +50,10 @@
                 <tr style = "background-color: beige;">
                     <th scope = "col">Rut</th>
                     <th scope = "col">Nombre</th>
-                    <th scope = "col">Apellido</th>
+                    <th scope = "col">telefono</th>
+                    <th scope = "col">Direccion</th>
                     <th scope = "col">Correo</th>
+                    <th scope = "col">Pais</th>
                     <th scope = "col">Tipo</th>
                     <th scope = "col">Editar</th>
                     <th scope = "col">Borrar de base de datos</th>
@@ -72,8 +62,10 @@
                     <tr style = "background-color: #eee;">
                         <td>{{us.rut}}</td>
                         <td>{{us.nombre}}</td>
-                        <td>{{us.apellido}}</td>
+                        <td>{{us.telefono}}</td>
+                        <td>{{us.direccion}}</td>
                         <td>{{us.correo}}</td>
+                        <td>{{us.pais}}</td>
                         <td>{{us.tipo}}</td>
                         <td><a href = "{% url 'form_mod_usuario' us.rut%}" class = "btn btn-primary">Modificar</a></td>
                         <td><a href = "{% url 'form_del_usuario' us.rut%}" class = "btn btn-danger">Eliminar</a></td>
@@ -93,7 +85,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm" style="margin-top: 30px;padding: 0px;">
-                        <p class="pieTexto">ANONYMOUS GYM</p>
+                        <p class="pieTexto">Ground ZERO</p>
                     </div>
                     <div class="col-sm" style="margin-top: 30px;padding-left: 70px;">
                         <a href="https://www.facebook.com/" ><img src="{% static 'core/img/Facebook_Rounded_Solid_icon-icons.com_61562.png'%}"></a>

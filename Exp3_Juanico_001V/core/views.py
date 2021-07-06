@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Tipo, Usuario
+from .models import Pago, Usuario
 from .forms import UsuarioForm
 
 
@@ -9,20 +9,6 @@ def index (request):
     
     return render (request, 'index.html')
 
-def clases (request):
-    return render (request, 'clases.html')
-
-def confirmacion (request):
-    return render (request, 'confirmacion.html')
-
-def horarioAtencion (request):
-    return render (request, 'horarioAtencion.html')
-
-def plan (request):
-    return render (request, 'plan.html')
-
-def quienSomos (request):
-    return render (request, 'quienSomos.html')
 
 def basededatos(request):
     usuario = Usuario.objects.all() 

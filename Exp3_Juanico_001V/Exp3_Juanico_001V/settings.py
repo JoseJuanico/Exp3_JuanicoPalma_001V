@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': '127.0.0.1:1521/xe',
-        'USER': 'c##prueba3',
-        'PASSWORD': 'prueba3',
+        'USER': 'c##prueba5',
+        'PASSWORD': 'prueba5',
         'TEST': {
             'USER': 'default_test',
             'TBLSPACE': 'default_test_tbls',
@@ -129,8 +129,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     '/core/static',
 )
-MEDIA_URL = '/video/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'video')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

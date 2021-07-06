@@ -6,15 +6,18 @@ from .models import Usuario
 class UsuarioForm(ModelForm): 
 	class Meta:
 		model = Usuario 
-		fields = ['rut', 'nombre', 'apellido', 'correo', 'contrasena', 'tipo']
+		fields = ['rut', 'nombre', 'telefono', 'direccion', 'correo', 'pais', 'contrasena', 'tipo', 'foto']
 
 		labels = { 
 			'rut': 'Ingrese el rut (EJ.10637553-2)',  
 			'nombre': 'Ingrese el nombre',
-			'apellido': 'Ingrese el apellido',
+			'telefono': 'Ingrese teléfono',
+			'direccion': 'Ingrese dirección',
 			'correo': 'Ingrese el correo electrónico',
+			'pais': 'Ingrese país',
 			'contrasena': 'Ingrese la contraseña',
-			'tipo': 'Ingrese el tipo de usuario',
+			'tipo': 'Ingrese el tipo de Pago',
+			'foto': 'Ingrese foto',
 			'editar': 'Editar',
 			'eliminar': 'Borrar de base de datos',
 		}
@@ -36,12 +39,20 @@ class UsuarioForm(ModelForm):
 					'name': 'lnombre',
 				}
 			),
-			'apellido': forms.TextInput(
+			'telefono': forms.TextInput(
 				attrs = {
 					'class': 'form-control',
-					'placeholder': 'Apellidos...',
-					'id': 'lapellido',
-					'name': 'lapellido',
+					'placeholder': 'Teléfono...',
+					'id': 'ltelefono',
+					'name': 'ltelefono',
+				}
+			),
+			'direccion': forms.TextInput(
+				attrs = {
+					'class': 'form-control',
+					'placeholder': 'Dirección...',
+					'id': 'ldireccion',
+					'name': 'ldireccion',
 				}
 			),
 			'correo': forms.EmailInput(
@@ -50,6 +61,14 @@ class UsuarioForm(ModelForm):
 					'placeholder': 'Correo electrónico...',
 					'id': 'lcorreo',
 					'name': 'lcorreo',
+				}
+			),
+			'pais': forms.TextInput(
+				attrs = {
+					'class': 'form-control',
+					'placeholder': 'País...',
+					'id': 'lpais',
+					'name': 'lpais',
 				}
 			),
 			'contrasena': forms.PasswordInput(
@@ -64,6 +83,13 @@ class UsuarioForm(ModelForm):
 				attrs = {
 					'class': 'form-control',
 					'id': 'tipo',
+				}
+			),
+			'foto': forms.ClearableFileInput(
+				attrs = {
+					'class': 'form-control',
+					'id': 'foto'
+
 				}
 			)
 		}

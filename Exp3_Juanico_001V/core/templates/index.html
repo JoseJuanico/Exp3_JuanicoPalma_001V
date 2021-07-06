@@ -19,7 +19,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#">
-                <a href="{% url 'index'%}"><img src="{% static 'core/img/logo.jpg'%}" width="80px" height="80px" alt=""></a>
+                <a href="{% url 'index'%}"><img src="{% static 'core/img/logoground.jpg'%}" width="80px" height="80px" alt=""></a>
             </a>
             
             <div class="collapse navbar-collapse" id="opciones">   
@@ -28,22 +28,10 @@
                         <a class="nav-link" href="{% url 'index'%}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'quienSomos'%}">Quiénes somos</a>
+                        <a class="nav-link" href="{% url 'crearUsuario'%}">Registrar proovedor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'plan'%}">Suscripción</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'clases'%}">Entrenamientos</a>
-                    </li>            
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'crearUsuario'%}">Registro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'horarioAtencion'%}">Horarios de apertura</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'basededatos'%}">Mostrar usuarios actuales</a>
+                        <a class="nav-link" href="{% url 'basededatos'%}">Mostrar proovedores actuales</a>
                     </li>
                 </ul>
             </div>
@@ -57,22 +45,17 @@
                 </ol>
         <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="{%static 'core/img/PromocionRelampago.jpg'%}" alt="">
+                <img class="d-block w-100" src="{%static 'core/img/11.jpg'%}" alt="">
                     <div class="carousel-caption">
-                        <h1 class="relampago">Oferta Relámpago!</h1>
-                        <p class="parrafoCarrousel">Aprovecha sólo por este fin de semana tu suscripción a un año de gimnasio por tan sólo $130.000<p class="parrafoCarrousel">(Precio de referencia $240.000)</p></p>
-                        <a href="{% url 'plan'%}" class="btn btn-info" role="button" style="text-align: right;">Más información</a>
                     </div>
                 </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="{% static 'core/img/fullgimnasio.png'%}" alt="">
+            <img class="d-block w-100" src="{% static 'core/img/2.jpg'%}" alt="">
                 <div class="carousel-caption">
-                    <p class="relampago">Planes desde $20.000...</p> 
-                     <a href="{% url 'plan'%}" class="btn btn-info" role="button">Suscríbete</a>
                 </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="{% static 'core/img/gym3.jpg'%}" alt="">
+            <img class="d-block w-100" src="{% static 'core/img/3.jpg'%}" alt="">
         </div>
         </div>
     <!-- botones de desplazamiento a izquierda y derecha -->      
@@ -89,22 +72,22 @@
         <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
         
         <!--Clases: imagenes con links a clases.html-->
-        <h1 class="titulos"><u>Clases profesionales</u></h1>
+        <h1 class="titulos"><u>Profesiones</u></h1>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6" style="background-color: br-dark">
                     <div class="container">
-                        <img class="imgIndex" src="{% static 'core/img/boxeo.jpg'%}" width="100%" >
+                        <img class="imgIndex" src="{% static 'core/img/4.jpg'%}" width="100%" >
                         <div class="middle">
-                            <a class="linkInivisible" href="{% url 'clases'%}">Boxeo</a>
+                            <a class="linkInivisible" href="#">Pintura</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6" style="background-color: br-dark">
                     <div class="container">
-                        <img class="imgIndex" src="{% static 'core/img/zumba.jpg'%}" width="100%" >
+                        <img class="imgIndex" src="{% static 'core/img/5.jpg'%}" width="100%" >
                         <div class="middle">
-                            <a class="linkInivisible" href="{% url 'clases'%}">Zumba</a>
+                            <a class="linkInivisible" href="#">Escultura</a>
                         </div>
                     </div>
                 </div>
@@ -112,17 +95,17 @@
             <div class="row">
                 <div class="col-sm-6" style="background-color: bg-dark">
                     <div class="container">
-                        <img class="imgIndex" src="{% static 'core/img/yoga.jpg'%}" width="100%">
+                        <img class="imgIndex" src="{% static 'core/img/6.jpg'%}" width="100%">
                         <div class="middle">
-                            <a class="linkInivisible" href="{% url 'clases'%}">Yoga</a>
+                            <a class="linkInivisible" href='#'>Teatro</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6" style="background-color: bg-dark">
                     <div class="container">
-                        <img class="imgIndex" src="{% static 'core/img/karate.jpg'%}" width="100%">
+                        <img class="imgIndex" src="{% static 'core/img/7.jpg'%}" width="100%">
                         <div class="middle">
-                            <a class="linkInivisible" href="{% url 'clases'%}">Karate</a>
+                            <a class="linkInivisible" href="#">Música</a>
                         </div>
                     </div>
                 </div>
@@ -130,42 +113,6 @@
         </div>
 
 
-        <hr style="height:70px; border-width:1; color:gray; background-color: black; margin: auto;">
-
-        <!--Testimonios: Row, Cards con imagen y texto-->
-        <h1 class="titulos"><u>Testimonios</u></h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="background-color: black;">
-                        <img class="card-img-top rounded-circle" src="{% static 'core/img/testimonio1.jpg'%}">
-                        <div class="card-body">
-                            <h4 class="card-title">Matias R.</h4>
-                            <cite class="card-text">"Me encantó el gimnasio, tiene muchas máquinas y trotadoras, además el ambiente es lo mejor!"</cite>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="background-color: black;">
-                        <img class="card-img-top rounded-circle" src="{% static 'core/img/testimonio2.jpg'%}">
-                        <div class="card-body">
-                            <h4 class="card-title">Javiera E.</h4>
-                            <cite class="card-text">"Es el mejor gimnasio al que me he inscrito, el personal es atento y las clases de entrenamiento son las mejores"</cite>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="background-color: black;">
-                        <img class="card-img-top rounded-circle" src="{% static 'core/img/testimonio3.jpg'%}">
-                        <div class="card-body">
-                            <h4 class="card-title">Bruno A. y Maria N.</h4>
-                            <cite class="card-text">"Nuestro doctor nos recomendo asistir a este gimnasio, para poder fortalecer nuestros cuerpos"</cite>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
 
         <hr style="height:100px; border-width:1; color:gray; background-color: black; margin: auto;">
         <!--pie de page-->
@@ -173,7 +120,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm" style="margin-top: 30px;padding: 0px;">
-                        <p class="pieTexto">ANONYMOUS GYM</p>
+                        <p class="pieTexto">Ground ZERO</p>
                     </div>
                     <div class="col-sm" style="margin-top: 30px;padding-left: 70px;">
                         <a href="https://www.facebook.com/" ><img src="{% static 'core/img/Facebook_Rounded_Solid_icon-icons.com_61562.png'%}"></a>
